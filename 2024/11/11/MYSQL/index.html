@@ -1,0 +1,269 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8" />
+    <title> | Hexo</title>
+    <meta name="author" content="John Doe" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <link rel="icon" href="/images/avatar.jpg" />
+    <link rel="preconnect" href="https://s4.zstatic.net" />
+<script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.cn" />
+<link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin />
+<link
+    rel="stylesheet"
+    href="https://fonts.googleapis.cn/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap"
+/>
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.alicdn.com/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>加载过慢请开启缓存 浏览器默认开启</p>
+                    <img src="/images/loading.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>HEXO</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;HEXO</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1></h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2024/11/11
+        </span>
+        
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <h1 id="MYSQL"><a href="#MYSQL" class="headerlink" title="MYSQL"></a>MYSQL</h1><h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><p>单行：   ——</p>
+<p>多行： &#x2F;*    *&#x2F;</p>
+<h2 id="数据库操作语言"><a href="#数据库操作语言" class="headerlink" title="数据库操作语言"></a>数据库操作语言</h2><h3 id="对数据库的操作"><a href="#对数据库的操作" class="headerlink" title="对数据库的操作"></a>对数据库的操作</h3><h4 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h4><pre><code class="sql">CREATE DATABASE  [IF NOT EXISTS] testschool
+</code></pre>
+<h4 id="删除数据库"><a href="#删除数据库" class="headerlink" title="删除数据库"></a>删除数据库</h4><pre><code class="sql">DROP DATABASE [IF EXISTS] testschool
+</code></pre>
+<h4 id="查询所有数据库"><a href="#查询所有数据库" class="headerlink" title="查询所有数据库"></a>查询所有数据库</h4><pre><code class="sql">SHOW DATABASES
+</code></pre>
+<h4 id="使用数据库"><a href="#使用数据库" class="headerlink" title="使用数据库"></a>使用数据库</h4><pre><code class="sql">USE `testschool`
+</code></pre>
+<h2 id="字段属性"><a href="#字段属性" class="headerlink" title="字段属性"></a>字段属性</h2><h3 id="Unsigned"><a href="#Unsigned" class="headerlink" title="Unsigned"></a>Unsigned</h3><p>无符号整数</p>
+<p>声明该列不能为负数</p>
+<h3 id="zerofill"><a href="#zerofill" class="headerlink" title="zerofill"></a>zerofill</h3><p>0填充</p>
+<p>不足位数，0填充</p>
+<h3 id="自增"><a href="#自增" class="headerlink" title="自增"></a>自增</h3><p>默认+1</p>
+<p>高级设置里面可以修改</p>
+<h3 id="默认值"><a href="#默认值" class="headerlink" title="默认值"></a>默认值</h3><h3 id="非空"><a href="#非空" class="headerlink" title="非空"></a>非空</h3><p>设置为NULL，则默认为空</p>
+<p>not null 则默认不为空</p>
+<h2 id="数据库表操作"><a href="#数据库表操作" class="headerlink" title="数据库表操作"></a>数据库表操作</h2><h3 id="增添表"><a href="#增添表" class="headerlink" title="增添表"></a>增添表</h3><pre><code class="sql">CREATE TABLE IF NOT EXISTS `student`(
+`id` INT (10) NOT NULL  AUTO_INCREMENT COMMENT &#39;学号&#39;,
+`name` VARCHAR(30) NOT NULL DEFAULT &#39;匿名&#39; COMMENT &#39;姓名&#39;,
+`pwd` VARCHAR (20) NOT NULL DEFAULT &#39;123456&#39; COMMENT &#39;密码&#39;,
+`sex` VARCHAR(2) NOT NULL DEFAULT &#39;男&#39; COMMENT &#39;性别&#39; ,
+`birthday` DATETIME DEFAULT NULL COMMENT &#39;生日&#39;,
+`address` VARCHAR(100) NOT NULL DEFAULT &#39;保密&#39; COMMENT &#39;地址&#39;,
+`email` VARCHAR (50) DEFAULT NULL COMMENT &#39;电子邮件地址&#39;,
+PRIMARY KEY (`id`) 
+)ENGINE=INNODB DEFAULT CHARSET=utf8
+</code></pre>
+<h4 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h4><img src="C:\Users\office\AppData\Roaming\Typora\typora-user-images\image-20241029213209790.png" alt="image-20241029213209790" style="zoom:50%;" />
+
+
+
+
+
+<h3 id="修改表的字段"><a href="#修改表的字段" class="headerlink" title="修改表的字段"></a>修改表的字段</h3><pre><code class="sql">ALTER TABLE student RENAME AS student1 -- 命名表名
+
+ALTER TABLE student1 ADD age INT (11) 	-- 新添表的列属性，增加表的字段 ADD 字段名 列属性
+
+ALTER TABLE student1 MODIFY age VARCHAR(11) -- 修改字段的约束
+
+ALTER TABLE student1 CHANGE age age1 INT (11) -- 重命名字段
+
+ALTER TABLE student1 DROP age1 -- 删除表的字段
+</code></pre>
+<h3 id="操作数据CRUD"><a href="#操作数据CRUD" class="headerlink" title="操作数据CRUD"></a>操作数据CRUD</h3><h4 id="插入数据"><a href="#插入数据" class="headerlink" title="插入数据"></a>插入数据</h4><h5 id="insert-语法"><a href="#insert-语法" class="headerlink" title="insert 语法"></a>insert 语法</h5><img src="C:\Users\office\AppData\Roaming\Typora\typora-user-images\image-20241029225145766.png" alt="image-20241029225145766" style="zoom:50%;" />
+
+
+
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2024 Hexo
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;John Doe
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    <script src="/js/main.js"></script>
+    
+    
+
+
+
+
+    
+</body>
+</html>
